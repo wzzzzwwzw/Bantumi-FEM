@@ -50,5 +50,12 @@
     <string name="txtDialogoFinalNegativo">No</string>
     <string name="new_game">New Game</string>
     <string name="exit">Exit</string>
+    <string name="txtDialogoResetTitulo" />
+    <string name="txtDialogoResetPregunta" />
+    <string name="txtDialogoAfirmativo" />
+    <string name="key_token_num" />
+    <string name="intNumInicialSemillas" />
+    <string name="txtDialogoNegativo" />
+
 
 </resources>

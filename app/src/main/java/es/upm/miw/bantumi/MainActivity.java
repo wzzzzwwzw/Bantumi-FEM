@@ -1,6 +1,7 @@
 package es.upm.miw.bantumi;
 
 import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -16,15 +17,19 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 import es.upm.miw.bantumi.ViewModels.BantumiViewModel;
+import es.upm.miw.bantumi.dialogs.FinalAlertDialog;
+import es.upm.miw.bantumi.dialogs.ResetDialog;
 
 public class MainActivity extends AppCompatActivity {
 
     protected final String LOG_TAG = "MiW";
-    JuegoBantumi juegoBantumi;
+    public JuegoBantumi juegoBantumi;
     BantumiViewModel bantumiVM;
     int numInicialSemillas;
+    private SharedPreferences root_preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Muestra el valor <i>valor</i> en la posición <i>pos</i>
      *
-     * @param pos posición a actualizar
+     * @param pos   posición a actualizar
      * @param valor valor a mostrar
      */
     private void mostrarValor(int pos, int valor) {
@@ -187,13 +192,32 @@ public class MainActivity extends AppCompatActivity {
                 ? "Gana Jugador 1"
                 : "Gana Jugador 2";
         Snackbar.make(
-                findViewById(android.R.id.content),
-                texto,
-                Snackbar.LENGTH_LONG
-        )
-        .show();
+                        findViewById(android.R.id.content),
+                        texto,
+                        Snackbar.LENGTH_LONG
+                )
+                .show();
 
         // @TODO guardar puntuación
         new FinalAlertDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
+    }
+
+    public void resetGame(@NonNull View view) {
+        new ResetDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
+    }
+
+    public void initialiseGame() {
+
+        this.numInicialSemillas = this.getInitialTokens();
+        this.juegoBantumi = new JuegoBantumi(bantumiVM, JuegoBantumi.Turno.turnoJ1, numInicialSemillas);
+        this.juegoBantumi.inicializar(JuegoBantumi.Turno.turnoJ1);
+    }
+
+    private int getInitialTokens() {
+
+
+        return Integer.parseInt(root_preferences.getString(
+                getString(R.string.key_token_num),
+                getString(R.string.intNumInicialSemillas)));
     }
 }
