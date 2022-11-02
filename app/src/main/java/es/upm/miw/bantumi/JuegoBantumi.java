@@ -2,7 +2,7 @@ package es.upm.miw.bantumi;
 
 import android.util.Log;
 
-import es.upm.miw.bantumi.model.BantumiViewModel;
+import es.upm.miw.bantumi.ViewModels.BantumiViewModel;
 
 public class JuegoBantumi {
 

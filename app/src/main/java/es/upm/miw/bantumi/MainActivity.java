@@ -17,7 +17,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Locale;
 
-import es.upm.miw.bantumi.model.BantumiViewModel;
+import es.upm.miw.bantumi.ViewModels.BantumiViewModel;
 
 public class MainActivity extends AppCompatActivity {
 

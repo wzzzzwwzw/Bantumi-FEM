@@ -1,4 +1,4 @@
-package es.upm.miw.bantumi.model;
+package es.upm.miw.bantumi.ViewModels;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
