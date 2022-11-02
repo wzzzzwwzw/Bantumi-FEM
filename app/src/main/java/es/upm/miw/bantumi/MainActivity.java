@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import java.util.ResourceBundle;
 import es.upm.miw.bantumi.ViewModels.BantumiViewModel;
 import es.upm.miw.bantumi.dialogs.FinalAlertDialog;
 import es.upm.miw.bantumi.dialogs.ResetDialog;
+import es.upm.miw.bantumi.utils.StorageFiles;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -131,7 +133,12 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton(android.R.string.ok, null)
                         .show();
                 return true;
-
+            case R.id.opcReiniciarPartida:
+                new ResetDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
+                return true;
+            case R.id.opcGuardarPartida:
+                this.saveGame();
+                return true;
             // @TODO!!! resto opciones
 
             default:
@@ -204,6 +211,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void resetGame(@NonNull View view) {
         new ResetDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
+    }
+
+    void saveGame() {
+        String text = this.juegoBantumi.serializa();
+        this.updateSavedGamesFile(text);
+        Toast.makeText(this, getResources().getString(R.string.savedGame),
+                Toast.LENGTH_SHORT).show();
+    }
+
+    private void updateSavedGamesFile(String text) {
+        StorageFiles sf = new StorageFiles(this);
+        String fileName = getResources().getString(R.string.saveFileName);
+        String[] fileContent = sf.getAllLines(fileName);
+        if (fileContent.length >= 5) {
+            sf.deleteLine(fileName, fileContent[0]);
+        }
+        sf.update(fileName, text + '\n');
     }
 
     public void initialiseGame() {
