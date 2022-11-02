@@ -48,5 +48,7 @@
     <string name="txtDialogoFinalPregunta">¿Desea jugar otra partida?</string>
     <string name="txtDialogoFinalAfirmativo">Sí</string>
     <string name="txtDialogoFinalNegativo">No</string>
+    <string name="new_game">New Game</string>
+    <string name="exit">Exit</string>
 
 </resources>
