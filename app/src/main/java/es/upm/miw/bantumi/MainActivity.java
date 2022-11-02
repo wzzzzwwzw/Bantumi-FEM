@@ -23,6 +23,7 @@ import java.util.ResourceBundle;
 import es.upm.miw.bantumi.ViewModels.BantumiViewModel;
 import es.upm.miw.bantumi.dialogs.FinalAlertDialog;
 import es.upm.miw.bantumi.dialogs.ResetDialog;
+import es.upm.miw.bantumi.dialogs.RestoreDialog;
 import es.upm.miw.bantumi.utils.StorageFiles;
 
 public class MainActivity extends AppCompatActivity {
@@ -139,6 +140,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.opcGuardarPartida:
                 this.saveGame();
                 return true;
+            case R.id.opcRecuperarPartida:
+                this.restoreGame();
+                return true;
             // @TODO!!! resto opciones
 
             default:
@@ -228,6 +232,16 @@ public class MainActivity extends AppCompatActivity {
             sf.deleteLine(fileName, fileContent[0]);
         }
         sf.update(fileName, text + '\n');
+    }
+
+    void restoreGame() {
+        new RestoreDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
+    }
+
+    public void deserialiseGame(String status) {
+        this.juegoBantumi.deserializa(status);
+        Toast.makeText(this, getResources().getString(R.string.restoreOk),
+                Toast.LENGTH_SHORT).show();
     }
 
     public void initialiseGame() {
