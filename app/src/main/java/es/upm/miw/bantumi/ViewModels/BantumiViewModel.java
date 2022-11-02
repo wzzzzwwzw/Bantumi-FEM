@@ -32,6 +32,7 @@ public class BantumiViewModel extends ViewModel {
 
     /**
      * Establece el valor para turno
+     *
      * @param turno valor
      */
     public void setTurno(JuegoBantumi.Turno turno) {
@@ -57,7 +58,7 @@ public class BantumiViewModel extends ViewModel {
      * Asigna el valor v a la posición pos del tablero
      *
      * @param pos índice
-     * @param v valor
+     * @param v   valor
      */
     public void setNumSemillas(int pos, int v) {
         if (pos < 0 || pos >= JuegoBantumi.NUM_POSICIONES) {

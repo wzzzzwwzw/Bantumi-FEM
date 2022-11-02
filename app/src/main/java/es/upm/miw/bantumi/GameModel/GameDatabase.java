@@ -26,7 +26,7 @@ public abstract class GameDatabase extends RoomDatabase {
             synchronized (GameDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            GameDatabase.class, "word_database")
+                                    GameDatabase.class, "word_database")
                             .allowMainThreadQueries()
                             .build();
                 }

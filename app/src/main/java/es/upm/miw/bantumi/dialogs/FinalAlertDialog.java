@@ -15,8 +15,8 @@ import es.upm.miw.bantumi.R;
 public class FinalAlertDialog extends AppCompatDialogFragment {
     @NonNull
     @Override
-	public AppCompatDialog onCreateDialog(Bundle savedInstanceState) {
-		final MainActivity main = (MainActivity) getActivity();
+    public AppCompatDialog onCreateDialog(Bundle savedInstanceState) {
+        final MainActivity main = (MainActivity) getActivity();
 
         assert main != null;
         AlertDialog.Builder builder = new AlertDialog.Builder(main);
@@ -42,6 +42,6 @@ public class FinalAlertDialog extends AppCompatDialogFragment {
                         }
                 );
 
-		return builder.create();
-	}
+        return builder.create();
+    }
 }

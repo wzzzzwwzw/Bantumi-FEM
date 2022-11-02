@@ -15,21 +15,21 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
 
-    public void New(View v)
-    {
+    public void New(View v) {
         // TODO Auto-generated method stub
-        Intent i = new Intent(getApplicationContext(),MainActivity.class);
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(i);
 
     }
-     public void History(View v)
-    {
+
+    public void History(View v) {
         // TODO Auto-generated method stub
-        Intent i = new Intent(getApplicationContext(),MainActivity2.class);
+        Intent i = new Intent(getApplicationContext(), MainActivity2.class);
         startActivity(i);
 
     }
-    public void Exit(View v){
+
+    public void Exit(View v) {
         moveTaskToBack(true);
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(1);

@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-	namespace 'es.upm.miw.bantumi'
+    namespace 'es.upm.miw.bantumi'
     compileSdk 32
 
     defaultConfig {
