@@ -3,6 +3,7 @@ package es.upm.miw.bantumi;
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,9 +21,12 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import es.upm.miw.bantumi.GameModel.Game;
 import es.upm.miw.bantumi.ViewModels.BantumiViewModel;
+import es.upm.miw.bantumi.ViewModels.GameViewModel;
 import es.upm.miw.bantumi.dialogs.FinalAlertDialog;
 import es.upm.miw.bantumi.dialogs.ResetDialog;
+import es.upm.miw.bantumi.dialogs.RestoreDialog;
 import es.upm.miw.bantumi.utils.StorageFiles;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,16 +36,22 @@ public class MainActivity extends AppCompatActivity {
     BantumiViewModel bantumiVM;
     int numInicialSemillas;
     private SharedPreferences root_preferences;
+    GameViewModel gameViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        root_preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
         // Instancia el ViewModel y el juego, y asigna observadores a los huecos
-        numInicialSemillas = getResources().getInteger(R.integer.intNumInicialSemillas);
+        numInicialSemillas = Integer.parseInt(root_preferences.getString(
+                getString(R.string.key_token_num),
+                getString(R.string.intNumInicialSemillas)));
         bantumiVM = new ViewModelProvider(this).get(BantumiViewModel.class);
         juegoBantumi = new JuegoBantumi(bantumiVM, JuegoBantumi.Turno.turnoJ1, numInicialSemillas);
+        gameViewModel = new GameViewModel(getApplication());
         crearObservadores();
     }
 
@@ -139,6 +149,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.opcGuardarPartida:
                 this.saveGame();
                 return true;
+            case R.id.opcRecuperarPartida:
+                this.restoreGame();
+                return true;
             // @TODO!!! resto opciones
 
             default:
@@ -149,6 +162,10 @@ public class MainActivity extends AppCompatActivity {
                 ).show();
         }
         return true;
+    }
+
+    private void restoreGame() {
+        new RestoreDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
     }
 
     /**
@@ -205,8 +222,18 @@ public class MainActivity extends AppCompatActivity {
                 )
                 .show();
 
-        // @TODO guardar puntuación
+        String winner = (texto.contains("1") ? this.getPlayer1Name() : getString(R.string.txtPlayer2));
+        int tokens = (texto.contains("1") ? this.juegoBantumi.getSemillas(6) : this.juegoBantumi.getSemillas(13));
+        Game game = new Game(winner, tokens);
+        gameViewModel.insert(game);
         new FinalAlertDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
+    }
+
+    private String getPlayer1Name() {
+        return root_preferences.getString(
+                getString(R.string.key_player1),
+                getString(R.string.txtPlayer1)
+        );
     }
 
     public void resetGame(@NonNull View view) {
@@ -243,5 +270,12 @@ public class MainActivity extends AppCompatActivity {
         return Integer.parseInt(root_preferences.getString(
                 getString(R.string.key_token_num),
                 getString(R.string.intNumInicialSemillas)));
+    }
+
+    public void deserialiseGame(String item) {
+
+        this.juegoBantumi.deserializa(item);
+        Toast.makeText(this, getResources().getString(R.string.restoreOk),
+                Toast.LENGTH_SHORT).show();
     }
 }

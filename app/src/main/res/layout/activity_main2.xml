@@ -12,27 +12,27 @@
         android:id="@+id/button2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:onClick="New"
-        android:text="@string/new_game"
+        android:text="New"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="141dp"
-        tools:ignore="MissingConstraints"
-        android:background="@android:color/white"
-        android:textColor="@android:color/black" />
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="141dp" />
 
 
     <Button
         android:id="@+id/button3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:onClick="Exit"
-        android:text="@string/exit"
+        android:text="Exit"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
         app:layout_constraintVertical_bias="0.386"
-        tools:layout_editor_absoluteX="182dp"
-        tools:ignore="MissingConstraints"
-        android:background="@android:color/white"
-        android:textColor="@android:color/black" />
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="182dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

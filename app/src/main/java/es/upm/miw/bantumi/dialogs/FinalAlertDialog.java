@@ -2,13 +2,10 @@ package es.upm.miw.bantumi.dialogs;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
-
-import es.upm.miw.bantumi.JuegoBantumi;
 import es.upm.miw.bantumi.MainActivity;
 import es.upm.miw.bantumi.R;
 
@@ -18,22 +15,21 @@ public class FinalAlertDialog extends AppCompatDialogFragment {
     public AppCompatDialog onCreateDialog(Bundle savedInstanceState) {
         final MainActivity main = (MainActivity) getActivity();
 
-        assert main != null;
         AlertDialog.Builder builder = new AlertDialog.Builder(main);
         builder
                 .setTitle(R.string.txtDialogoFinalTitulo)
                 .setMessage(R.string.txtDialogoFinalPregunta)
                 .setPositiveButton(
-                        getString(R.string.txtDialogoFinalAfirmativo),
+                        getString(R.string.txtDialogoAfirmativo),
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                main.juegoBantumi.inicializar(JuegoBantumi.Turno.turnoJ1);
+                                main.initialiseGame();
                             }
                         }
                 )
                 .setNegativeButton(
-                        getString(R.string.txtDialogoFinalNegativo),
+                        getString(R.string.txtDialogoNegativo),
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
