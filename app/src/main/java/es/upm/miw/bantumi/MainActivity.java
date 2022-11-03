@@ -1,6 +1,7 @@
 package es.upm.miw.bantumi;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -21,6 +22,8 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import es.upm.miw.bantumi.Activities.BantumiSettings;
+import es.upm.miw.bantumi.Activities.RankingActivity;
 import es.upm.miw.bantumi.GameModel.Game;
 import es.upm.miw.bantumi.ViewModels.BantumiViewModel;
 import es.upm.miw.bantumi.ViewModels.GameViewModel;
@@ -133,9 +136,11 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-//            case R.id.opcAjustes: // @todo Preferencias
-//                startActivity(new Intent(this, BantumiPrefs.class));
-//                return true;
+
+            case R.id.opcAjustes: // @todo Preferencias
+                startActivity(new Intent(this, BantumiSettings.class));
+                return true;
+
             case R.id.opcAcercaDe:
                 new AlertDialog.Builder(this)
                         .setTitle(R.string.aboutTitle)
@@ -151,6 +156,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.opcRecuperarPartida:
                 this.restoreGame();
+                return true;
+            case R.id.opcMejoresResultados:
+                startActivity(new Intent(this, RankingActivity.class));
                 return true;
             // @TODO!!! resto opciones
 
@@ -227,6 +235,15 @@ public class MainActivity extends AppCompatActivity {
         Game game = new Game(winner, tokens);
         gameViewModel.insert(game);
         new FinalAlertDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        root_preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(this);
+        TextView tvJugador1 = findViewById(R.id.tvPlayer1);
+        tvJugador1.setText(this.getPlayer1Name());
+        numInicialSemillas = getInitialTokens();
     }
 
     private String getPlayer1Name() {

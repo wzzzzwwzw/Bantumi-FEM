@@ -84,20 +84,10 @@
     <string name="title_activity_bantumi_settings">BantumiSettings</string>
 
     <!-- Preferences -->
-
-    <!-- Preferences -->
-    <string name="player1_wael">Nombre del Jugador</string>
+    <string name="player1_nick">Nombre del Jugador</string>
     <string name="key_player1">player1</string>
     <string name="key_token_num">token_num</string>
     <string name="token_pref">Numero inicial de semillas</string>
-
-
-
-
-
-    <string name="exit"> Exit </string>
-    <string name="new_game" > New game </string>
-
-    <string name="txtDialogoFinalAfirmativo">Game Ends</string>
+    <string name="player1_wael" />
 
 </resources>

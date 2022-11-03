@@ -15,6 +15,7 @@
         <!--  Asocia la acción al pulsar sobre un hueco -->
         <item name="android:onClick">huecoPulsado</item>
     </style>
+
     <style name="ActionButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

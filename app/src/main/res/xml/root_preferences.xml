@@ -1,20 +1,19 @@
-<PreferenceScreen
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <EditTextPreference
-            app:key="@string/key_player1"
-            android:title="@string/player1_wael"
-            android:defaultValue="@string/txtPlayer1"
-            app:useSimpleSummaryProvider="true"
-            android:singleLine="true"/>
+        app:key="@string/key_player1"
+        android:title="@string/player1_wael"
+        android:defaultValue="@string/txtPlayer1"
+        app:useSimpleSummaryProvider="true"
+        android:singleLine="true" />
 
     <EditTextPreference
-            app:key="@string/key_token_num"
-            android:title="@string/token_pref"
-            android:defaultValue="@string/intNumInicialSemillas"
-            app:useSimpleSummaryProvider="true"
-            android:singleLine="true"/>
+        app:key="@string/key_token_num"
+        android:title="@string/token_pref"
+        android:defaultValue="@string/intNumInicialSemillas"
+        app:useSimpleSummaryProvider="true"
+        android:singleLine="true" />
 
 
 </PreferenceScreen>
