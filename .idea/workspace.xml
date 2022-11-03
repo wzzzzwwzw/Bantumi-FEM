@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f41a180-ec74-4c55-98e0-53464117897f" name="Changes" comment="commit local changes">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/upm/miw/bantumi/JuegoBantumi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/upm/miw/bantumi/JuegoBantumi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/upm/miw/bantumi/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/upm/miw/bantumi/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/upm/miw/bantumi/model/BantumiViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/upm/miw/bantumi/ViewModels/BantumiViewModel.java" afterDir="false" />
+    <list default="true" id="0f41a180-ec74-4c55-98e0-53464117897f" name="Changes" comment="Refactoring + Added Top results Functionalities">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,13 +29,38 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Bantumi" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -42,11 +76,28 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MIW/Android/Bantumi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\newfb\Desktop\Bantumi\app\src\main\java\es\upm\miw\bantumi\dialogs" />
+      <recent name="C:\Users\newfb\Desktop\Bantumi\app\src\main\res\layout" />
+      <recent name="C:\Users\newfb\Desktop\Bantumi\app\src\main\res" />
+      <recent name="C:\Users\newfb\Desktop\Bantumi\app\src\main\res\values" />
+      <recent name="C:\Users\newfb\Desktop\Bantumi\app\src\main\java\es\upm\miw\bantumi\GameModel" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="es.upm.miw.bantumi.Activities" />
+      <recent name="es.upm.miw.bantumi.dialogs" />
+      <recent name="es.upm.miw.bantumi.ViewModels" />
+      <recent name="es.upm.miw.bantumi" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Bantumi.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -122,7 +173,91 @@
       <option name="project" value="LOCAL" />
       <updated>1667419455382</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added game">
+      <created>1667420484257</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667420484257</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Main activity 2 Launcher">
+      <created>1667426238109</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667426238109</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Game Model + DAO">
+      <created>1667426610686</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667426610686</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added Utilities">
+      <created>1667426733911</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667426733911</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added Dependencies in build.gradle + Added Game Database Repository">
+      <created>1667426947152</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667426947152</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactoring + Added Reset Function + dialog">
+      <created>1667428438762</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667428438762</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Refactoring + Add serializer and deserializer">
+      <created>1667428851761</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667428851761</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update Restore Select + Add Save functionality">
+      <created>1667429883082</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667429883082</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added Recover game Functionality + Refactoring">
+      <created>1667433251376</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1667433251376</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Updates + added root preferences">
+      <created>1667437809933</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667437809933</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added Settings Activity">
+      <created>1667437988228</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667437988228</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Refactoring + Added Top results Functionalities">
+      <created>1667439660101</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667439660101</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,7 +271,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="develop" />
                       </list>
                     </value>
                   </entry>
@@ -150,6 +285,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit local changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit local changes" />
+    <MESSAGE value="added game" />
+    <MESSAGE value="Added Main activity 2 Launcher" />
+    <MESSAGE value="Added Game Model + DAO" />
+    <MESSAGE value="Added Utilities" />
+    <MESSAGE value="Added Dependencies in build.gradle + Added Game Database Repository" />
+    <MESSAGE value="Refactoring + Added Reset Function + dialog" />
+    <MESSAGE value="Refactoring + Add serializer and deserializer" />
+    <MESSAGE value="Update Restore Select + Add Save functionality" />
+    <MESSAGE value="Added Recover game Functionality + Refactoring" />
+    <MESSAGE value="Revert &quot;Added Recover game Functionality + Save score + Refactoring&quot;&#10;&#10;This reverts commit 47a12cd2287ea9b244f3d03b3f170006eb20bac2." />
+    <MESSAGE value="Updates + added root preferences" />
+    <MESSAGE value="Added Settings Activity" />
+    <MESSAGE value="Refactoring + Added Top results Functionalities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring + Added Top results Functionalities" />
   </component>
 </project>
