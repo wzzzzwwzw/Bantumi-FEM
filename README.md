@@ -1,5 +1,3 @@
-# FEM. Data Persistence (MIW-UPM)
-
 # Bantumi Game
 
 Bantumi is an African board game, which resembles chess in that the game is entirely decided by skill.
@@ -9,10 +7,6 @@ The rules themselves are remarkably simple, but the strategies available are man
 ## Technologies
 
 Android Studio
+Java
 
-
-
-## Author
-
-Wael Louati
 
