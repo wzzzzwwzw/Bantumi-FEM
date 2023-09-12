@@ -6,7 +6,8 @@ The rules themselves are remarkably simple, but the strategies available are man
 
 ## Technologies
 
-Android Studio
-Java
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+
+Android studio
 
 
