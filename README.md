@@ -5,6 +5,7 @@ Bantumi is a game for two players, who sit facing each other one above the board
 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Android studio
+![as](https://github.com/wzzzzwwzw/Bantumi-FEM/assets/46055260/0c87022b-a63b-4d70-9169-c4bf71f7ad3c)
+
 
 
