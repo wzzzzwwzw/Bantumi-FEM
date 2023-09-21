@@ -1,8 +1,5 @@
 # Bantumi Game
-
-Bantumi is an African board game, which resembles chess in that the game is entirely decided by skill.
-there is no random element. I came to know it as bantumi but it is also known as mancala.
-The rules themselves are remarkably simple, but the strategies available are many and varied, and can be extremely complex.
+Bantumi is a game for two players, who sit facing each other one above the board depicted and one below. The aim is to get more beans into your big pot -- the one on your right -- than your opponent does into his. The game continues until one player has no more beans in his small pots - the six on his side.
 
 ## Technologies
 
